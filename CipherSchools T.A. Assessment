@@ -1,0 +1,23 @@
+#include <iostream>
+using namespace std;
+int getmissing(int a[], int n)
+{
+    int total = n * (n + 1) / 2;
+    int sum = 0;
+    for (int i = 0; i < n; i++)
+    {
+        sum += a[i];
+    }
+    if (total == sum)
+        return 0;
+    else
+        return (total - sum);
+}
+int main()
+{
+    int arr[] = {3, 0, 1};
+    int n = sizeof(arr) / sizeof(arr[0]);
+    int x = getmissing(arr, n);
+    cout << x;
+    return 0;
+}
